@@ -47,7 +47,7 @@ import Dashboard from "./pages/Dashboard.js"
 import Finance from './pages/Finance.js'
 import Error404 from './pages/Error404.js'
 import Charts from './pages/Charts.js'
-import Settings from './pages/Error404.js'
+// import Settings from './pages/Error404.js'
 // import PostShow     from './views/pages/PostShow.js'
 // import Register     from './views/pages/Register.js'
 
@@ -154,6 +154,17 @@ const updateBudget = function () {
 	// 	}
 	// });
 };
+
+const darkToggle = function (x) {
+	document.querySelector("#dark-light-mode-a").addEventListener("click", function () {
+		$("#dark-light-mode").toggleClass("fa-sun fa-moon");
+		document.querySelectorAll(".inverted").forEach(result => {
+			result.classList.toggle("invert");
+		})
+		document.documentElement.classList.toggle("dark-mode");
+	});
+
+}
 
 
 //******************Finance Calculator*************************** */
@@ -545,7 +556,7 @@ const routes = {
 	'/': Dashboard,
 	'/finance': Finance,
 	'/charts': Charts,
-	'/settings': Settings
+	// '/settings': Settings
 };
 
 const state = {};
@@ -590,6 +601,8 @@ const router = async () => {
 		$(".sidebar-finance").removeClass("active");
 		$(".sidebar-charts").removeClass("active");
 		$(".sidebar-settings").removeClass("active");
+		darkToggle();
+
 
 
 	} else if (page === Finance) {
@@ -600,6 +613,9 @@ const router = async () => {
 		$(".sidebar-finance").addClass("active");
 		$(".sidebar-charts").removeClass("active");
 		$(".sidebar-settings").removeClass("active");
+		darkToggle();
+
+
 
 
 	} else if (page === Charts) {
@@ -611,13 +627,17 @@ const router = async () => {
 		$(".sidebar-finance").removeClass("active");
 		$(".sidebar-charts").addClass("active");
 		$(".sidebar-settings").removeClass("active");
+		darkToggle();
 
-	} else if (page === Settings) {
-		$(".sidebar-home").removeClass("active");
-		$(".sidebar-finance").removeClass("active");
-		$(".sidebar-charts").removeClass("active");
-		$(".sidebar-settings").addClass("active");
+
 	}
+
+	// } else if (page === Settings) {
+	// 	$(".sidebar-home").removeClass("active");
+	// 	$(".sidebar-finance").removeClass("active");
+	// 	$(".sidebar-charts").removeClass("active");
+	// 	$(".sidebar-settings").addClass("active");
+	// }
 
 }
 

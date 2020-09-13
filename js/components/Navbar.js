@@ -48,14 +48,13 @@ let Navbar = {
 					<li class="nav-item sidebar-settings">
 						<a
 							class="nav-link collapsed"
-							href="/#/settings"
 							data-toggle="collapse"
 							data-target="#collapseTwo"
 							aria-expanded="true"
 							aria-controls="collapseTwo"
-							name="settings"
+							name="settings" id="dark-light-mode-a"
 						>
-							<i class="fas fa-fw fa-cog"></i>
+							<i class="fas fa-moon" id="dark-light-mode"></i>
 							<span>Settings</span>
 						</a>
 						<!-- <div

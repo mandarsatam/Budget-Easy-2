@@ -179,8 +179,8 @@ let Finance = {
 
 
 
-										<div class="card bg-primary text-white shadow mb-1">
-											<div class="card-body row budget__income">
+										<div class="card bg-primary text-white shadow mb-1  no-border">
+											<div class="card-body row budget__income inverted">
 												<div class="budget__income--text col-md-6 col-sm-12">
 													Income
 												</div>
@@ -198,8 +198,8 @@ let Finance = {
 
 
 
-										<div class="card bg-danger text-white shadow mb-2">
-											<div class="card-body row budget__expenses">
+										<div class="card bg-danger text-white shadow mb-2 no-border">
+											<div class="card-body row budget__expenses inverted">
 												<div class="budget__expenses--text col-md-6 col-sm-12">
 													Expenses
 												</div>
