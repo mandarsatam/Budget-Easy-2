@@ -260,11 +260,13 @@ const appController = (function (budgetCtrl, uiCtrl) {
 				(async function () {
 					await dbRefAllItemsinc.once('value', snap => {
 						var childData = snap.val();
+						let dataLength;
 						if (childData !== null) {
-							var dataLength = childData.length;
+							dataLength = childData.length;
 						} else {
-							var dataLength = 0;
+							dataLength = 0;
 						}
+						console.log(dataLength);
 
 						newItem = budgetCtrl.addItem(
 							input.inputType,
@@ -273,6 +275,8 @@ const appController = (function (budgetCtrl, uiCtrl) {
 							input.inputValue,
 							input.inputCategory
 						);
+
+						console.log(newItem.id);
 						//3. Add the item to the UI
 						uiCtrl.addListItem(newItem, input.inputType);
 
@@ -287,8 +291,8 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
 						//Add to Firebase
 
-						if (newItem.constructor.name === "Income") {
-							const dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/inc/' + newItem.id);
+						// if (newItem.constructor.name === "Income") {
+							let dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/inc/' + newItem.id);
 
 							dbRefObject.set({
 								description: newItem.description,
@@ -296,15 +300,15 @@ const appController = (function (budgetCtrl, uiCtrl) {
 								value: newItem.value,
 								category: newItem.category
 							});
-						} else if (newItem.constructor.name === "Expense") {
-							const dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/exp/' + newItem.id);
-							dbRefObject.set({
-								description: newItem.description,
-								id: newItem.id,
-								value: newItem.value,
-								category: newItem.category
-							});
-						}
+						// } else if (newItem.constructor.name === "Expense") {
+						// 	const dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/exp/' + newItem.id);
+						// 	dbRefObject.set({
+						// 		description: newItem.description,
+						// 		id: newItem.id,
+						// 		value: newItem.value,
+						// 		category: newItem.category
+						// 	});
+						// }
 
 					});
 				})();
@@ -340,15 +344,15 @@ const appController = (function (budgetCtrl, uiCtrl) {
 
 						//Add to Firebase
 
-						if (newItem.constructor.name === "Income") {
-							const dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/inc/' + newItem.id);
-							dbRefObject.set({
-								description: newItem.description,
-								id: newItem.id,
-								value: newItem.value,
-								category: newItem.category
-							});
-						} else if (newItem.constructor.name === "Expense") {
+						// if (newItem.constructor.name === "Income") {
+						// 	const dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/inc/' + newItem.id);
+						// 	dbRefObject.set({
+						// 		description: newItem.description,
+						// 		id: newItem.id,
+						// 		value: newItem.value,
+						// 		category: newItem.category
+						// 	});
+						// } else if (newItem.constructor.name === "Expense") {
 							const dbRefObject = firebase.database().ref('/' + userId + '/' + month + '/allItems/exp/' + newItem.id);
 							dbRefObject.set({
 								description: newItem.description,
@@ -356,7 +360,7 @@ const appController = (function (budgetCtrl, uiCtrl) {
 								value: newItem.value,
 								category: newItem.category
 							});
-						}
+						// }
 
 					});
 				})();

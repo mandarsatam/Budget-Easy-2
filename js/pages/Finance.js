@@ -315,7 +315,7 @@ let Finance = {
 										placeholder="Add description" />
 									<input type="number" class="add__value col-md-2" placeholder="Value" />
 									<button class="add__btn col-md-1.5">
-										<i class="ion-ios-checkmark-outline"></i>
+										<i class="far fa-check-circle"></i>
 									</button>
 								</div>
 									</div>

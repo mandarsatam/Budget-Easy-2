@@ -288,13 +288,9 @@ let Dashboard = {
                                 <div class="container-fluid exp-analysis-container">
                                     <div class="income">
                                     <h5 class="expense-analysis-header">Expenses</h5>
-
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>

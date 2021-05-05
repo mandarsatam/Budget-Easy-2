@@ -47,7 +47,7 @@ let Dashboard = {
                             <div class="col-md-4">
                                 <div class="card mb-2 no-border">
                                     <div class="card-header no-header">
-                                        Total Expenses
+                                        Total Income
                                     </div>
                                     <div class="card-body">
                                         <h5 style="color: rgb(182, 0, 182);"><b class="total-exp">₹ ---</b></h5>
@@ -55,7 +55,7 @@ let Dashboard = {
                                 </div>
                                 <div class="card mb-2 no-border">
                                     <div class="card-header no-header">
-                                        Total Income
+                                        Total Expenses
                                     </div>
                                     <div class="card-body">
                                         <h5 style="color: rgb(182, 0, 182);"><b class="total-inc">₹ ---</b></h5>
